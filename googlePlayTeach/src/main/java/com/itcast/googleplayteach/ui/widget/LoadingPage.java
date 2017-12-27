@@ -10,11 +10,13 @@ import com.itcast.googleplayteach.utils.UIUtils;
 
 /**
  * 加载页面 - 正在加载 - 加载失败 - 数据为空 - 访问成功
- * 使用该基类需要实现2个方法
+ * 使用该基类需要实现2个方法, 调用加载数据方法
  * 1. 加载成功显示的View
  * @see #onCreateSuccessView()
  * 2. 加载数据
  * @see #onLoad()
+ * 3. 需要调用加载数据
+ * @see #loadData()
  *
  * @author Kevin
  *
