@@ -11,7 +11,11 @@ import android.view.View;
  * 2. 给view设置tag
  * 3. 刷新界面
  * 
- * 此类相当于是对getView方法的封装
+ * 此类相当于是对getView方法的封装，封装后使用该基类只需实现2个方法：
+ * 1. 加载布局已经findViewById
+ * @see #initView()
+ * 2. 刷新页面
+ * @see #refreshView
  * 
  * @author Kevin
  * 

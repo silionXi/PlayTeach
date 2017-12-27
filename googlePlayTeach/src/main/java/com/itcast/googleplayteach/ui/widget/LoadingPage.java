@@ -10,9 +10,14 @@ import com.itcast.googleplayteach.utils.UIUtils;
 
 /**
  * 加载页面 - 正在加载 - 加载失败 - 数据为空 - 访问成功
- * 
+ * 使用该基类需要实现2个方法
+ * 1. 加载成功显示的View
+ * @see #onCreateSuccessView()
+ * 2. 加载数据
+ * @see #onLoad()
+ *
  * @author Kevin
- * 
+ *
  */
 public abstract class LoadingPage extends FrameLayout {
 
@@ -64,6 +69,13 @@ public abstract class LoadingPage extends FrameLayout {
 			mEmptyView = onCreateEmptyView();
 			addView(mEmptyView);
 		}
+
+		/**
+		 * 访问成功在后面才加载
+		 * 需要不同页面实现
+		 * @see #onCreateSuccessView()
+ 		 */
+
 
 		showRightPage();
 	}

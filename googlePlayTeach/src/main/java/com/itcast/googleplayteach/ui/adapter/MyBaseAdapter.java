@@ -13,6 +13,12 @@ import com.itcast.googleplayteach.utils.UIUtils;
 
 /**
  * 数据适配器的基类
+ *
+ * 封装后使用该基类只需实现2个方法：
+ * 1. 传入BaseHolder子类
+ * @see #getHolder(int)
+ * 2. 加载更多数据
+ * @see #onLoadMore()
  * 
  * @author Kevin
  * 
@@ -45,6 +51,10 @@ public abstract class MyBaseAdapter<T> extends BaseAdapter {
 		return position;
 	}
 
+	/**
+	 * 子类可以再重写该方法修改Type Count
+	 * @return
+	 */
 	@Override
 	public int getViewTypeCount() {
 		return 2;// 两种布局类型,一种普通布局,一种加载更多的布局
@@ -75,6 +85,7 @@ public abstract class MyBaseAdapter<T> extends BaseAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		BaseHolder holder = null;
+		// 1. 封装成初始化布局
 		if (convertView == null) {
 			// 根据当前item的类型来初始化不同的Holder对象
 			if (getItemViewType(position) == ITEM_LORD_MORE) {
@@ -89,6 +100,7 @@ public abstract class MyBaseAdapter<T> extends BaseAdapter {
 			holder = (BaseHolder) convertView.getTag();
 		}
 
+		// 2. 封装成给各个控件设置数据
 		if (getItemViewType(position) != ITEM_LORD_MORE) {
 			// 刷新界面,更新数据
 			holder.setData(getItem(position));

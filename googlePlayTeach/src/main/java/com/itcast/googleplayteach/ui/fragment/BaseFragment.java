@@ -8,10 +8,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.itcast.googleplayteach.ui.adapter.MyBaseAdapter;
+import com.itcast.googleplayteach.ui.holder.BaseHolder;
 import com.itcast.googleplayteach.ui.widget.LoadingPage;
 import com.itcast.googleplayteach.ui.widget.LoadingPage.ResultState;
 import com.itcast.googleplayteach.utils.UIUtils;
 
+/**
+ * 框架：
+ * 1. LoadingPage封装
+ * @see LoadingPage
+ * 2. BaseAdapter封装
+ * @see MyBaseAdapter
+ * 3. BaseHolder封装
+ * @see BaseHolder
+ */
 public abstract class BaseFragment extends Fragment {
 
 	private LoadingPage mLoadingPage;

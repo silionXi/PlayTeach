@@ -20,7 +20,7 @@ public class BaseApplication extends Application {
 	public void onCreate() {
 		super.onCreate();
 		context = getApplicationContext();
-		mainThreadId = android.os.Process.myTid();// 获取当前主线程id
+		mainThreadId = android.os.Process.myTid();// 获取当前主线程id Thread.currentThread().getId()？
 		handler = new Handler();
 	}
 
