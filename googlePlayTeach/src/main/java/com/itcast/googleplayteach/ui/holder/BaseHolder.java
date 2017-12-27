@@ -2,6 +2,8 @@ package com.itcast.googleplayteach.ui.holder;
 
 import android.view.View;
 
+import com.itcast.googleplayteach.ui.adapter.MyBaseAdapter;
+
 /**
  * ViewHolder的基类
  * 
@@ -11,11 +13,14 @@ import android.view.View;
  * 2. 给view设置tag
  * 3. 刷新界面
  * 
- * 此类相当于是对getView方法的封装，封装后使用该基类只需实现2个方法：
+ * 此类相当于是对{@link MyBaseAdapter}getView方法的封装，封装后使用该基类只需实现2个方法：
  * 1. 加载布局已经findViewById
  * @see #initView()
  * 2. 刷新页面
  * @see #refreshView
+ *
+ * 该基类也可以用于其他非MyBaseAdapter的情况，但是需要手动设置数据
+ * @see #setData(Object)
  * 
  * @author Kevin
  * 
